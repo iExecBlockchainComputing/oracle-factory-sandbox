@@ -158,6 +158,36 @@ const init = async () => {
       });
 
     document
+      .getElementById('update-oracle-x-chain-button')
+      .addEventListener('click', () => {
+        const out = getOutput('update-oracle-x-chain-out');
+
+        const paramSetCid = document.getElementById(
+          'update-oracle-x-chain-cid-input'
+        ).value;
+
+        const targetBlockchains = document.getElementById(
+          'update-oracle-x-chain-target-input'
+        ).value;
+
+        oracleFactory
+          .updateOracle(paramSetCid, {
+            targetBlockchains: JSON.parse(targetBlockchains),
+          })
+          .subscribe({
+            error: (e) => {
+              out.error(formatObservableError(e));
+            },
+            next: (data) => {
+              out.info(formatObservableData(data));
+            },
+            complete: () => {
+              out.success('COMPLETE');
+            },
+          });
+      });
+
+    document
       .getElementById('read-oracle-from-params-button')
       .addEventListener('click', async () => {
         const out = getOutput('read-oracle-from-params-out');

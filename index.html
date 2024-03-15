@@ -291,6 +291,50 @@
             ></textarea>
           </div>
         </div>
+
+        <div class="method-override">
+          <h4>cross-chain update</h4>
+          <div class="hint">
+            cross-chain updates are rate-limited based on oracleId
+          </div>
+          <div class="input-container">
+            <label for="update-oracle-x-chain-cid-input"
+              ><span class="param">paramSetCid</span></label
+            >
+            <input
+              id="update-oracle-x-chain-cid-input"
+              type="text"
+              value="QmbeY27w6dKxNQnGXih4AaotgNY3XuZ2yzbi2ZWQfRApqs"
+            />
+          </div>
+          <div class="input-container">
+            <label for="update-oracle-x-chain-target-input"
+              ><span class="param">targetBlockchains</span></label
+            >
+            <input
+              id="update-oracle-x-chain-target-input"
+              type="text"
+              value="[80001]"
+              placeholder="array of chainId (ex: [80001] for polygon mumbai)"
+            />
+          </div>
+          <div>
+            <button
+              id="update-oracle-x-chain-button"
+              type="button"
+              class="submit"
+            >
+              updateOracle()
+            </button>
+          </div>
+          <div>
+            <textarea
+              id="update-oracle-x-chain-out"
+              class="out big"
+              disabled
+            ></textarea>
+          </div>
+        </div>
       </div>
 
       <div class="method-block">
