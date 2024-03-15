@@ -1,9 +1,21 @@
 body {
   font-family: sans-serif;
 }
+.code,
+.param {
+  font-family: monospace;
+  font-size: 1.3em;
+  color: blue;
+}
 .method-block {
   max-width: 600px;
-  margin: 30px auto;
+  margin: 50px auto;
+}
+.method-block > p {
+  color: grey;
+}
+.hint {
+  color: gray;
 }
 .input-container {
   display: flex;
