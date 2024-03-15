@@ -281,11 +281,11 @@ const init = async () => {
           'read-x-chain-oracle-from-oracleid-datatype-input'
         ).value;
 
-        const oracleReader = provider
-          ? new IExecOracleReader(provider)
-          : oracleFactory;
-
         try {
+          const oracleReader = provider
+            ? new IExecOracleReader(provider)
+            : oracleFactory;
+
           const res = await oracleReader.readOracle(oracleId, { dataType });
           out.success(JSON.stringify(res));
         } catch (e) {
