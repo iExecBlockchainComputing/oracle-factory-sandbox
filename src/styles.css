@@ -1,6 +1,15 @@
 body {
   font-family: sans-serif;
 }
+#app {
+  max-width: 600px;
+  margin: auto;
+}
+#init-error {
+  color: red;
+  font-weight: bold;
+  margin: 3rem;
+}
 .code,
 .param {
   font-family: monospace;
@@ -8,8 +17,7 @@ body {
   color: blue;
 }
 .method-block {
-  max-width: 600px;
-  margin: 50px auto;
+  margin: 50px 0;
 }
 .method-block > p {
   color: grey;

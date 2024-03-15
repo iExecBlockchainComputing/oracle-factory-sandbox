@@ -8,6 +8,7 @@ import {
   getOutput,
   formatObservableData,
   formatObservableError,
+  setInitError,
 } from './helpers.js';
 
 const init = async () => {
@@ -15,10 +16,10 @@ const init = async () => {
     let ethProvider;
 
     if (window.ethereum) {
-      console.log('using default provider');
+      console.log('using default provider window.ethereum');
       ethProvider = window.ethereum;
     } else {
-      throw Error('Missing injected provider');
+      throw Error('Missing injected provider `window.ethereum`');
     }
 
     await ethProvider.enable();
@@ -264,7 +265,8 @@ const init = async () => {
 
     console.log('initialized');
   } catch (e) {
-    console.log('failed to init', e);
+    console.log('failed to initialize', e);
+    setInitError(`Failed to initialize: ${e.message}`);
   }
 };
 

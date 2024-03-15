@@ -39,3 +39,8 @@ export const formatObservableError = (error) => {
   }
   return message;
 };
+
+export const setInitError = (error) => {
+  const out = document.getElementById('init-error');
+  out.innerText = error;
+};
