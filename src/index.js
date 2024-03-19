@@ -22,8 +22,6 @@ const init = async () => {
       throw Error('Missing injected provider `window.ethereum`');
     }
 
-    await ethProvider.enable();
-
     const oracleFactory = new IExecOracleFactory(ethProvider);
 
     document
