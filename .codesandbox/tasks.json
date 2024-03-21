@@ -26,10 +26,6 @@
       "name": "preview",
       "command": "npm run preview",
       "runAtStart": false
-    },
-    "npm ci": {
-      "name": "install",
-      "command": "npm ci"
     }
   }
 }
