@@ -19,7 +19,9 @@ const init = async () => {
       console.log('using default provider window.ethereum');
       ethProvider = window.ethereum;
     } else {
-      throw Error('Missing injected provider `window.ethereum`');
+      throw Error(
+        'Missing injected web3 provider.\nImportant - Please install a web3 wallet like Metamask to continue.'
+      );
     }
 
     const oracleFactory = new IExecOracleFactory(ethProvider);
