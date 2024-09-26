@@ -24,7 +24,14 @@ const init = async () => {
       );
     }
 
-    const oracleFactory = new IExecOracleFactory(ethProvider);
+    const oracleFactory = new IExecOracleFactory(ethProvider, {
+      /**
+       * this demo uses a workerpool offering free computing power dedicated to learning
+       * this resource is shared and may be throttled, it should not be used for production applications
+       * remove the `workerpool` option to switch back to a production ready workerpool
+       */
+      workerpool: 'v8-learn-prod.pools.iexec.eth',
+    });
 
     document
       .getElementById('test-params-button')
