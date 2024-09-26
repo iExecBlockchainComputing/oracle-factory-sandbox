@@ -30,7 +30,7 @@ const init = async () => {
        * this resource is shared and may be throttled, it should not be used for production applications
        * remove the `workerpool` option to switch back to a production ready workerpool
        */
-      workerpool: 'v8-learn-prod.pools.iexec.eth',
+      workerpool: 'v8-learn-prod.main.pools.iexec.eth',
     });
 
     document
