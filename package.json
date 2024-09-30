@@ -1,6 +1,6 @@
 {
   "name": "oracle-factory-sandbox",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@iexec/iexec-oracle-factory-wrapper": "^2.1.0"
+    "@iexec/iexec-oracle-factory-wrapper": "^2.2.0"
   },
   "devDependencies": {
     "prettier": "^3.2.5",
