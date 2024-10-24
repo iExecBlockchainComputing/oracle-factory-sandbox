@@ -24,14 +24,7 @@ const init = async () => {
       );
     }
 
-    const oracleFactory = new IExecOracleFactory(ethProvider, {
-      /**
-       * this demo uses a workerpool offering free computing power dedicated to learning
-       * this resource is shared and may be throttled, it should not be used for production applications
-       * remove the `workerpool` option to switch back to a production ready workerpool
-       */
-      workerpool: 'prod-v8-learn.main.pools.iexec.eth',
-    });
+    const oracleFactory = new IExecOracleFactory(ethProvider);
 
     document
       .getElementById('test-params-button')
@@ -138,7 +131,7 @@ const init = async () => {
               {},
           };
 
-          oracleFactory.updateOracle(paramSet).subscribe({
+          oracleFactory.updateOracle(paramSet, { useVoucher: true }).subscribe({
             error: (e) => {
               out.error(formatObservableError(e));
             },
@@ -164,17 +157,19 @@ const init = async () => {
             'update-oracle-from-cid-cid-input'
           ).value;
 
-          oracleFactory.updateOracle(paramSetCid).subscribe({
-            error: (e) => {
-              out.error(formatObservableError(e));
-            },
-            next: (data) => {
-              out.info(formatObservableData(data));
-            },
-            complete: () => {
-              out.success('COMPLETE');
-            },
-          });
+          oracleFactory
+            .updateOracle(paramSetCid, { useVoucher: true })
+            .subscribe({
+              error: (e) => {
+                out.error(formatObservableError(e));
+              },
+              next: (data) => {
+                out.info(formatObservableData(data));
+              },
+              complete: () => {
+                out.success('COMPLETE');
+              },
+            });
         } catch (e) {
           out.error(e.toString());
         }
@@ -197,6 +192,7 @@ const init = async () => {
           oracleFactory
             .updateOracle(paramSetCid, {
               targetBlockchains: JSON.parse(targetBlockchains),
+              useVoucher: true,
             })
             .subscribe({
               error: (e) => {
