@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@iexec/iexec-oracle-factory-wrapper": "^2.4.0"
+    "@iexec/iexec-oracle-factory-wrapper": "^2.4.0-nightly-e721cf26c66ecb3795f9a0065aaf39196ec6678b"
   },
   "devDependencies": {
     "prettier": "^3.2.5",
